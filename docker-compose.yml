@@ -1,0 +1,58 @@
+  version: '3'
+
+  services:
+    # maven:
+    #   image: maven:3.6.3-openjdk-16
+    #   volumes:
+    #     - ./conf/maven:/usr/local/tomcat/conf
+    #   networks:
+    #     default:
+    #       ipv4_address: 172.18.0.32
+    mysql:
+      image: mysql:8.0.20
+      environment:
+        MYSQL_ROOT_PASSWORD: root
+        MYSQL_DATABASE: QUIZ
+        MYSQL_USER: user
+        MYSQL_PASSWORD: user
+        command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+      volumes:
+        - db_data:/var/lib/mysql
+      networks:
+        app_net:
+          ipv4_address: 172.18.0.3
+    apache:
+      image: httpd:latest
+      ports:
+      - '80:80'
+      volumes:
+      - ./httpd.conf:/usr/local/apache2/conf/httpd.conf
+      networks:
+        app_net:
+          ipv4_address: 172.18.0.4
+    tomcat:
+      depends_on:
+        - apache
+      image: tomcat:latest
+      ports:
+      - '8080:8080'
+      - '8081:8081'
+      expose:
+      - '8009'
+      volumes:
+        - ./conf/tomcat/conf:/usr/local/tomcat/conf
+        - ./target/QuizWeb-1.0-SNAPSHOT.war:/usr/local/tomcat/webapps/quizWeb.war
+      networks:
+        app_net:
+          ipv4_address: 172.18.0.5
+
+  volumes:
+    db_data:
+
+  networks:
+    app_net:
+      driver: bridge
+      ipam:
+        driver: default
+        config:
+          - subnet: 172.18.0.1/24
