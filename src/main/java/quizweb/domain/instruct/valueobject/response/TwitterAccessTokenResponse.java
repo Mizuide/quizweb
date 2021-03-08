@@ -1,0 +1,53 @@
+package quizweb.domain.instruct.valueobject.response;
+
+import quizweb.domain.instruct.valueobject.base.ResponseObject;
+
+public class TwitterAccessTokenResponse extends ResponseObject{
+
+    public TwitterAccessTokenResponse(String resBody) {
+        String[] resArray = resBody.split("&");
+        for (String res : resArray) {
+            String key = res.substring(0, res.indexOf("="));
+            String value = res.substring(res.indexOf("=") + 1, res.length()).replace("\"", "");
+            //TODO:ライブラリ作る？
+            switch (key) {
+                case "oauth_token":
+                    this.oauthToken = value;
+                    break;
+                case "oauth_token_secret":
+                    this.oauthTokenSecret = value;
+                    break;
+                case "user_id":
+                    this.userId = value;
+                case "screen_name":
+                    this.screenName=value;
+
+                default:
+                    throw new RuntimeException("想定外の形式です 本文:" + resBody);
+            }
+        }
+
+    }
+
+    private String oauthToken;
+    private String oauthTokenSecret;
+    private String userId;
+    private String screenName;
+
+
+    public String getOauthToken() {
+        return oauthToken;
+    }
+
+    public String getOauthTokenSecret() {
+        return oauthTokenSecret;
+    }
+    public String getUserId() {
+        return userId;
+    }
+    public String getScreenName() {
+        return screenName;
+    }
+
+ 
+}
