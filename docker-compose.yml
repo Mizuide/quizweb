@@ -10,13 +10,15 @@
     #       ipv4_address: 172.18.0.32
     mysql:
       image: mysql:8.0.20
+      expose:
+        - '3306'
       environment:
         MYSQL_ROOT_PASSWORD: root
         MYSQL_DATABASE: QUIZ
         MYSQL_USER: user
         MYSQL_PASSWORD: user
         command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
-      volumes:
+      volumes:  
         - db_data:/var/lib/mysql
       networks:
         app_net:

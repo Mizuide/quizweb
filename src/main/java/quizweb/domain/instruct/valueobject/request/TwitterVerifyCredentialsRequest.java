@@ -1,5 +1,7 @@
 package quizweb.domain.instruct.valueobject.request;
 
+import java.util.Map.Entry;
+
 import org.springframework.http.RequestEntity;
 
 import quizweb.common.enums.HttpRequestMethodEnum;
@@ -44,6 +46,10 @@ public class TwitterVerifyCredentialsRequest extends RequestObject {
     }
     
     private void createRequestEntity() {
+        StringBuilder urlBuilder = new StringBuilder(url);
+        for(Entry<String,String> e :param.entrySet()){
+            urlBuilder.append("?"+e.getKey()+"="+e.getValue());
+        }
         requestEntity = RequestEntity.get(url).header("Authorization", twitterOAuthHeader.toString()).build();
 
     }

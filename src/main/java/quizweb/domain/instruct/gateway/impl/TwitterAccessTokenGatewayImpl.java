@@ -27,11 +27,16 @@ public class TwitterAccessTokenGatewayImpl implements TwitterAccessTokenGateway 
 
     @Override
     public TwitterAccessTokenResponse fetchAPI(String oauthToken, String oauthVerifier) {
-        TwitterAccessTokenRequest request = new TwitterAccessTokenRequest(twitterAPITokenProperties, twitterAPIUrlProperties, oauthToken, oauthVerifier);
-        ResponseEntity<String> responseEntity =  restTemplate.exchange(request.getRequetEntity(), String.class);
-
-        TwitterAccessTokenResponse response = new TwitterAccessTokenResponse(responseEntity.getBody());
-        return response;        
+        TwitterAccessTokenRequest request = new TwitterAccessTokenRequest(twitterAPITokenProperties,
+                twitterAPIUrlProperties, oauthToken, oauthVerifier);
+        TwitterAccessTokenResponse response = null;
+        try {
+            ResponseEntity<String> responseEntity = restTemplate.exchange(request.getRequetEntity(), String.class);
+            response = new TwitterAccessTokenResponse(responseEntity.getBody());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return response;
     }
 
 }

@@ -19,11 +19,12 @@ public class TwitterAccessTokenResponse extends ResponseObject{
                     break;
                 case "user_id":
                     this.userId = value;
+                    break;
                 case "screen_name":
                     this.screenName=value;
-
+                    break;
                 default:
-                    throw new RuntimeException("想定外の形式です 本文:" + resBody);
+                    throw new RuntimeException("想定外の形式です キー:" + value);
             }
         }
 
