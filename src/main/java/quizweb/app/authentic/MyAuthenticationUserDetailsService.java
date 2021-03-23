@@ -23,6 +23,7 @@ public class MyAuthenticationUserDetailsService
     @Autowired
     TwitterVerifyCredentialsGateway twitterVerifyCredentialsGateway;
 
+
     @Override
     public UserDetails loadUserDetails(PreAuthenticatedAuthenticationToken token) throws UsernameNotFoundException {
 
@@ -36,8 +37,11 @@ public class MyAuthenticationUserDetailsService
                 .fetchAPI(twitterAccessTokenResponse.getOauthToken(), twitterAccessTokenResponse.getOauthTokenSecret());
 
         TwitterUser twitterUser = new TwitterUser(twitterVerifyCredentialsResponse);
-        System.out.println(twitterUser.getImageUrl());
+
         return twitterUser;
     }
+
+
+
 
 }
