@@ -1,13 +1,13 @@
-package quizweb.app.servrice.impl;
+package quizweb.domain.servrice.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import quizweb.app.servrice.AuthOnTwitterService;
 import quizweb.common.properties.TwitterAPIUrlProperties;
 import quizweb.domain.instruct.gateway.TwitterRequestTokenGateway;
 import quizweb.domain.instruct.valueobject.response.TwitterRequestTokenResponse;
+import quizweb.domain.servrice.AuthOnTwitterService;
 
 @Service
 public class AuthOnTwitterServiceImpl implements AuthOnTwitterService {

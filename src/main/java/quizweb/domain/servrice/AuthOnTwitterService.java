@@ -1,4 +1,4 @@
-package quizweb.app.servrice;
+package quizweb.domain.servrice;
 
 public interface AuthOnTwitterService {
 

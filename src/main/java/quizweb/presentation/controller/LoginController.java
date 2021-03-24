@@ -7,19 +7,26 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import quizweb.app.authentic.entity.TwitterUser;
-import quizweb.domain.repository.mapper.UserMapper;
+import quizweb.domain.repository.entity.User;
+import quizweb.domain.servrice.FindOrResisterUserSevice;
 
 @Controller
 public class LoginController {
 
-@Autowired
-UserMapper mapper;
+    FindOrResisterUserSevice findOrResisterUserSevice;
+
+    @Autowired
+    public LoginController(FindOrResisterUserSevice findOrResisterUserSevice) {
+        this.findOrResisterUserSevice = findOrResisterUserSevice;
+    }
 
     @GetMapping("/login")
     public String login(Model model) {
         TwitterUser twitterUser = (TwitterUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        model.addAttribute("user",twitterUser);
-        mapper.findAll();
+
+        User user = findOrResisterUserSevice.findOrResisterUserByTwitteUser(twitterUser);
+
+        model.addAttribute("user", user);
         return "login";
     }
 
