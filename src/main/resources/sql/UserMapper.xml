@@ -4,4 +4,10 @@
    <select id="findAll" resultType="quizweb.domain.repository.entity.User">
       select * from USER
    </select>
+   <insert id="insert" parameterType="quizweb.domain.repository.entity.User">
+      insert into USER(id,name,image_url) values(#{id},#{name},#{imageUrl})
+   </insert>
+    <select id="find" resultType="quizweb.domain.repository.entity.User">
+      select * from USER where id=#{id}
+   </select>
  </mapper>
