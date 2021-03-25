@@ -8,15 +8,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import quizweb.app.authentic.entity.TwitterUser;
 import quizweb.domain.repository.entity.User;
-import quizweb.domain.servrice.FindOrResisterUserSevice;
+import quizweb.domain.servrice.FindOrResisterUserService;
 
 @Controller
 public class LoginController {
 
-    FindOrResisterUserSevice findOrResisterUserSevice;
+    FindOrResisterUserService findOrResisterUserSevice;
 
     @Autowired
-    public LoginController(FindOrResisterUserSevice findOrResisterUserSevice) {
+    public LoginController(FindOrResisterUserService findOrResisterUserSevice) {
         this.findOrResisterUserSevice = findOrResisterUserSevice;
     }
 

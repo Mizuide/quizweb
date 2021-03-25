@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import quizweb.app.servrice.impl.AuthOnTwitterServiceImpl;
+import quizweb.domain.servrice.impl.AuthOnTwitterServiceImpl;
 
 @SpringBootTest
 public class AuthOnTwitterServiceTest {
