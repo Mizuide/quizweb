@@ -5,6 +5,7 @@
       image: node:15.12.0
       volumes:
       - .:/workspace/
+      - ../src/main/resources/static/react:/workspace/build
       command: /bin/sh -c "while sleep 1000; do :; done"     
   networks:
     default:
