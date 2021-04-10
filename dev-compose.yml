@@ -5,8 +5,14 @@
       image: maven:3.6.3-openjdk-16
       volumes:
       - .:/workspaces/quizweb
+      - react_zone:/workspaces/quizweb/src/main/resources/static/react
+      
       command: /bin/sh -c "while sleep 1000; do :; done"     
   networks:
     default:
         external:
           name: quizweb_app_net
+
+
+  volumes:
+    react_zone:          

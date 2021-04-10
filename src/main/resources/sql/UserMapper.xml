@@ -2,12 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="quizweb.domain.repository.mapper.UserMapper">
    <select id="findAll" resultType="quizweb.domain.repository.entity.User">
-      select * from USER
+      select * from user
    </select>
    <insert id="insert" parameterType="quizweb.domain.repository.entity.User">
-      insert into USER(id,name,image_url) values(#{id},#{name},#{imageUrl})
+      insert into user(id,name,image_url) values(#{id},#{name},#{imageUrl})
    </insert>
     <select id="find" resultType="quizweb.domain.repository.entity.User">
-      select * from USER where id=#{id}
+      select * from user where id=#{id}
    </select>
  </mapper>

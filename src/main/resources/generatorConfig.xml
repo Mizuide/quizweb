@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<context id="context1">
+		<jdbcConnection connectionURL="jdbc:mysql://172.18.0.3:3306/QUIZ" driverClass="com.mysql.cj.jdbc.Driver" password="user" userId="user" />
+		<javaModelGenerator targetPackage="quizweb.domain.repository.entity" targetProject="/workspaces/quizweb/src/main/java" />
+		<sqlMapGenerator targetPackage="sql" targetProject="/workspaces/quizweb/src/main/resources" />
+		<javaClientGenerator targetPackage="quizweb.domain.repository.mapper" targetProject="/workspaces/quizweb/src/main/java" type="XMLMAPPER" />
+		<table schema="QUIZ" tableName="quiz" enableSelectByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableCountByExample="false" selectByExampleQueryId="false" />
+		<table schema="QUIZ" tableName="question" enableSelectByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableCountByExample="false" selectByExampleQueryId="false" />
+		<table schema="QUIZ" tableName="selection" enableSelectByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableCountByExample="false" selectByExampleQueryId="false" />
+	</context>
+</generatorConfiguration>
