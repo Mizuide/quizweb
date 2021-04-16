@@ -1,18 +1,25 @@
 package quizweb.app.restcontroller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import quizweb.app.restcontroller.response.Question;
+import quizweb.domain.repository.entity.Quiz;
 
 @RestController
 public class QuestionController {
     
-    @GetMapping("/getQuestion")
-    public Question getQuestion(){
-            Question quiz = new Question();
+    @GetMapping("/getQuestions")
+    public List<Quiz> getQuestion(){
+        List<Quiz> ret = new ArrayList<>();
+            
+            Quiz quiz = new Quiz();
             quiz.setId(3l);
-            return quiz;
+            quiz.setTitle("test");
+            ret.add(quiz);
+            return ret;
     }
 
 

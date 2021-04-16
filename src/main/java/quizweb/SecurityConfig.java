@@ -42,7 +42,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) throws Exception {
         // Security Filter Chain から除外するパス等を設定
-        web.ignoring().antMatchers("/img/**/","/index","/doAuth");
+        web.ignoring().antMatchers("/img/**/","/index","/doAuth","/**/manifest.json");
     }
     @Override
     protected void configure(HttpSecurity http) throws Exception {
