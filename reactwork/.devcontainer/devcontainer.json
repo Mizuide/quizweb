@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.155.1/containers/docker-existing-dockerfile
 {
-	"name": "Existing Dockerfile",
+	"name": "react_works",
 	// Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
 	
 	// // Sets the run context to one level up instead of the .devcontainer folder.
@@ -18,8 +18,6 @@
 	// Set *default* container specific settings.json values on container create.
 	"settings": { 
 		"terminal.integrated.shell.linux": "/bin/bash",
-		"java.home": "/usr/java/openjdk-16",
-		"maven.executable.path": "/bin/mvn"
 	},
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
