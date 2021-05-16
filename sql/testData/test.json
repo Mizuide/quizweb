@@ -1,0 +1,18 @@
+{
+ "quiz":[
+     {"id":1,"create_userid":1,"title":"進撃の巨人クイズ","answerer_num":0,"avarage_correct":0.0,"category":"comic"}
+    ],
+ "question":[
+     {"id":1,"quiz_id":1,"num":1,"content":"エレンが巨人になった時の身長は何m？"},
+     {"id":2,"quiz_id":1,"num":2,"content":"ミカサの巻いているマフラーの色は？"}
+    ],
+ "choice":[
+    {"id":1,"question_Id":1,"selection_no":1,"content":"10m","correct_flg":false},
+    {"id":2,"question_Id":1,"selection_no":2,"content":"60m","correct_flg":false},
+    {"id":3,"question_Id":1,"selection_no":3,"content":"16m","correct_flg":true},
+    {"id":4,"question_Id":1,"selection_no":4,"content":"23m","correct_flg":false},
+    {"id":5,"question_Id":2,"selection_no":1,"content":"赤","correct_flg":false},
+    {"id":6,"question_Id":2,"selection_no":2,"content":"黒","correct_flg":true},
+    {"id":7,"question_Id":2,"selection_no":3,"content":"紫","correct_flg":false}
+]
+}
