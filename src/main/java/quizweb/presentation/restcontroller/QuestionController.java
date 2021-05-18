@@ -1,4 +1,4 @@
-package quizweb.app.restcontroller;
+package quizweb.presentation.restcontroller;
 
 import java.util.ArrayList;
 import java.util.List;
