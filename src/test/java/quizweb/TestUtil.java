@@ -5,7 +5,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 @SuppressWarnings("all")
-
 public class TestUtil {
     /**
      * privateメソッドの実行を行うためのメソッドです。 （テスト用）

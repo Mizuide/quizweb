@@ -11,6 +11,10 @@ import quizweb.domain.servrice.FindOrResisterUserService;
 @Service
 public class FindOrResisterUserServiceimpl implements FindOrResisterUserService {
     @Autowired
+    public FindOrResisterUserServiceimpl(UserMapper userMapper){
+        this.userMapper=userMapper;
+    }
+    
     UserMapper userMapper;
 
     @Override

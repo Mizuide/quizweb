@@ -1,18 +1,39 @@
 {
  "quiz":[
-     {"id":1,"create_userid":1,"title":"進撃の巨人クイズ","answerer_num":0,"avarage_correct":0.0,"category":"comic"}
+     {"id":1,"create_userid":1,"title":"進撃の巨人クイズ","answerer_num":0,"avarage_correct":0.0,"category":"anime"},
+     {"id":2,"create_userid":1,"title":"進撃の巨人クイズ 中級","answerer_num":0,"avarage_correct":0.0,"category":"anime"},
+     {"id":3,"create_userid":1,"title":"ダミー","answerer_num":0,"avarage_correct":0.0,"category":"study"},
+     {"id":4,"create_userid":1,"title":"ダミー","answerer_num":0,"avarage_correct":0.0,"category":"anime"},
+     {"id":5,"create_userid":1,"title":"ダミー","answerer_num":0,"avarage_correct":0.0,"category":"anime"},
+     {"id":6,"create_userid":1,"title":"ダミー 中級","answerer_num":0,"avarage_correct":0.0,"category":"anime"},
+     {"id":7,"create_userid":1,"title":"ダミー","answerer_num":0,"avarage_correct":0.0,"category":"anime"},
+     {"id":8,"create_userid":1,"title":"ダミー","answerer_num":0,"avarage_correct":0.0,"category":"anime"},
+     {"id":9,"create_userid":1,"title":"ダミー","answerer_num":0,"avarage_correct":0.0,"category":"anime"},
+     {"id":10,"create_userid":1,"title":"ダミー","answerer_num":0,"avarage_correct":0.0,"category":"anime"},
+     {"id":11,"create_userid":1,"title":"ダミー","answerer_num":0,"avarage_correct":0.0,"category":"other"}
     ],
  "question":[
-     {"id":1,"quiz_id":1,"num":1,"content":"エレンが巨人になった時の身長は何m？"},
-     {"id":2,"quiz_id":1,"num":2,"content":"ミカサの巻いているマフラーの色は？"}
+     {"id":1,"quiz_id":1,"num":1,"content":"エレンが巨人になった時の身長は何m？","comment":"16m"},
+     {"id":2,"quiz_id":1,"num":2,"content":"ミカサの巻いているマフラーの色は？"},
+     {"id":3,"quiz_id":2,"num":1,"content":"ユミルが食べた顎の巨人の継承者の名前は？"},
+     {"id":4,"quiz_id":2,"num":2,"content":"先代獣の巨人の継承者の名前は？"}
+
     ],
  "choice":[
     {"id":1,"question_Id":1,"selection_no":1,"content":"10m","correct_flg":false},
     {"id":2,"question_Id":1,"selection_no":2,"content":"60m","correct_flg":false},
     {"id":3,"question_Id":1,"selection_no":3,"content":"16m","correct_flg":true},
     {"id":4,"question_Id":1,"selection_no":4,"content":"23m","correct_flg":false},
-    {"id":5,"question_Id":2,"selection_no":1,"content":"赤","correct_flg":false},
-    {"id":6,"question_Id":2,"selection_no":2,"content":"黒","correct_flg":true},
-    {"id":7,"question_Id":2,"selection_no":3,"content":"紫","correct_flg":false}
+    {"id":5,"question_Id":2,"selection_no":1,"content":"赤","correct_flg":true},
+    {"id":6,"question_Id":2,"selection_no":2,"content":"黒","correct_flg":false},
+    {"id":7,"question_Id":2,"selection_no":3,"content":"紫","correct_flg":false},
+    {"id":8,"question_Id":3,"selection_no":1,"content":"マルセル","correct_flg":true},
+    {"id":9,"question_Id":3,"selection_no":2,"content":"マガト","correct_flg":false},
+    {"id":10,"question_Id":3,"selection_no":3,"content":"ボッコ","correct_flg":false},
+    {"id":11,"question_Id":3,"selection_no":4,"content":"ニケ","correct_flg":false},
+    {"id":12,"question_Id":4,"selection_no":1,"content":"クレバー","correct_flg":false},
+    {"id":13,"question_Id":4,"selection_no":2,"content":"クサバー","correct_flg":false},
+    {"id":14,"question_Id":4,"selection_no":3,"content":"クレヴァー","correct_flg":false},
+    {"id":15,"question_Id":4,"selection_no":4,"content":"クサヴァー","correct_flg":true}
 ]
 }
