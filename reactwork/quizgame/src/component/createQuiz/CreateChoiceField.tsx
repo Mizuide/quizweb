@@ -5,7 +5,6 @@ type prop = {
     choices: createChoiceParam[];
     setChoices: (param: createChoiceParam[]) => void;
 
-
 }
 
 const CreateChoiceField: React.FC<prop> = (prop: prop) => {
