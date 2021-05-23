@@ -1,0 +1,9 @@
+//TODO
+・quizindexで問題情報のフェッチが間に合わなかったときに読み込み中の画像を表示できるように
+→indexのpropにwaitingflgを追加する
+
+
+・Questionsの配列の一意性について、keyをつけることで担保された。
+keyをつけないと以前のQuestionのstateを使用してしまう。詳しく挙動を調べてevernoteに書く
+
+・fetchAnswerをPOSTとGETに分離
