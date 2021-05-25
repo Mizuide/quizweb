@@ -12,8 +12,8 @@ test('render_incorrect', async () => {
     render(<Result answerStatus={'incorrect'} comment={'不正解！'}/>)
     screen.debug();
 })
-test('render_waiting', async () => {
+// test('render_waiting', async () => {
     
-    render(<Result answerStatus={'waiting'} comment={'表示されないこと'}/>)
-    screen.debug();
-})
+//     render(<Result answerStatus={'waiting'} comment={'表示されないこと'}/>)
+//     screen.debug();
+// })

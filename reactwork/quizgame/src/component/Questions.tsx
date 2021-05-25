@@ -25,7 +25,6 @@ const Question: React.FC<questionProp> = (prop: questionProp) => {
                 selectiionNo: answer
             };
             fetchAnswer(param);
-            // setAnswerStatus(answerStatusConst.answerStatus.waiting);
         }
     }, [answer])
 
@@ -74,7 +73,7 @@ const Questions: React.FC<prop> = (prop: prop) => {
 
     //if user answer,display next question 
     const onClick = () => {
-        if (answerStatus === answerStatusConst.answerStatus.none || answerStatus === answerStatusConst.answerStatus.waiting) {
+        if (answerStatus === answerStatusConst.answerStatus.none) {
             return false;
         } else if(currentNum + 1 < maxSize ){
             setCurrentNum(currentNum + 1);

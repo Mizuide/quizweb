@@ -1,7 +1,8 @@
 import axios, { AxiosResponse } from 'axios';
-import { useState } from "react";
+import { useState } from 'react';
 import fetchQuizDetailsParam from "../type/fetchQuizDetailParam";
 import quizDetail from '../type/quizDetail';
+import useWaitingContext from "./useWaitingContext";
 
 const QUIZ_DETAIL_URL: string = "/quizWeb/quizDetail";
 
@@ -12,8 +13,7 @@ function fetchQuizDetail(param: fetchQuizDetailsParam): Promise<AxiosResponse<qu
 const useFetchQuizDetail: () => [quizDetail|undefined, (param: fetchQuizDetailsParam) => void] = () => {
     const [quizDetail, setQuizDetail] = useState<quizDetail>();
     const setFetchQuizDetail = (param: fetchQuizDetailsParam) => {
-        
-        fetchQuizDetail(param).then(res => setQuizDetail(res.data));
+        useWaitingContext(fetchQuizDetail(param).then(res => setQuizDetail(res.data)));
     }
         return [quizDetail, setFetchQuizDetail];
 }

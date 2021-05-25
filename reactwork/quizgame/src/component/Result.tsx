@@ -18,10 +18,6 @@ const Result: React.FC<prop> = (prop: prop): Result => {
         case answerStatus.none:
             displayAttr = "none";
             break;            
-        case answerStatus.waiting:
-            displayImg = (<img alt='読み込み中' src={waitingImg} />);
-            displayAttr = "none";
-            break;
         case answerStatus.correct:
             displayImg = (<img alt='正解' src={correctImg} />);
             break;
