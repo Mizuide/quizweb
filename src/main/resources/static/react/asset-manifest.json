@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/quizWeb/react/static/css/main.1a1b8c70.chunk.css",
+    "main.js": "/quizWeb/react/static/js/main.3afc95fc.chunk.js",
+    "main.js.map": "/quizWeb/react/static/js/main.3afc95fc.chunk.js.map",
+    "runtime-main.js": "/quizWeb/react/static/js/runtime-main.fce75132.js",
+    "runtime-main.js.map": "/quizWeb/react/static/js/runtime-main.fce75132.js.map",
+    "static/js/2.17442378.chunk.js": "/quizWeb/react/static/js/2.17442378.chunk.js",
+    "static/js/2.17442378.chunk.js.map": "/quizWeb/react/static/js/2.17442378.chunk.js.map",
+    "static/js/3.5b5335db.chunk.js": "/quizWeb/react/static/js/3.5b5335db.chunk.js",
+    "static/js/3.5b5335db.chunk.js.map": "/quizWeb/react/static/js/3.5b5335db.chunk.js.map",
+    "index.html": "/quizWeb/react/index.html",
+    "static/css/main.1a1b8c70.chunk.css.map": "/quizWeb/react/static/css/main.1a1b8c70.chunk.css.map",
+    "static/js/2.17442378.chunk.js.LICENSE.txt": "/quizWeb/react/static/js/2.17442378.chunk.js.LICENSE.txt",
+    "static/media/correct.7fe1bc84.png": "/quizWeb/react/static/media/correct.7fe1bc84.png",
+    "static/media/incorrect.e1cc9809.png": "/quizWeb/react/static/media/incorrect.e1cc9809.png",
+    "static/media/waiting.3d89aabb.gif": "/quizWeb/react/static/media/waiting.3d89aabb.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fce75132.js",
+    "static/js/2.17442378.chunk.js",
+    "static/css/main.1a1b8c70.chunk.css",
+    "static/js/main.3afc95fc.chunk.js"
+  ]
+}

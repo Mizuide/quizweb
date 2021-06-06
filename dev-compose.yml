@@ -2,7 +2,7 @@
 
   services:
     develop:
-      image: maven:3.6.3-openjdk-16
+      image: maven:3.8.1-jdk-11
       volumes:
       - .:/workspaces/quizweb
       - react_zone:/workspaces/quizweb/src/main/resources/static/react
