@@ -1,6 +1,6 @@
 import os
 import json
-
+import io,sys
 ddlDirPath = '../ddl'
 
 currentFile = os.path.dirname(os.path.abspath(__file__))

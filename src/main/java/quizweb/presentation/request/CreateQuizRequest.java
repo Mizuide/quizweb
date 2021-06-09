@@ -1,35 +1,37 @@
 package quizweb.presentation.request;
 
+import java.util.List;
+
 public class CreateQuizRequest {
     private CreateQuizParam createQuizParam;
 
 
-    public class CreateQuizParam {
+    public static class CreateQuizParam {
         private String category;
 
         private String title;
 
         private String description;
 
-        private CreateQuestionParam[] questionParams;
+        private List<CreateQuestionParam> questions;
 
-        public class CreateQuestionParam {
+        public static class CreateQuestionParam {
             private String content;
 
             private String comment;
 
-            private CreateChoiceParam[] choiceParams;
+            private List<CreateChoiceParam> choices;
 
             public String getContent() {
                 return content;
             }
 
-            public CreateChoiceParam[] getChoiceParams() {
-                return choiceParams;
+            public List<CreateChoiceParam> getChoices() {
+                return choices;
             }
 
-            public void setChoiceParams(CreateChoiceParam[] choiceParams) {
-                this.choiceParams = choiceParams;
+            public void setChoices(List<CreateChoiceParam> choiceParams) {
+                this.choices = choiceParams;
             }
 
             public String getComment() {
@@ -45,7 +47,7 @@ public class CreateQuizRequest {
             }
         }
 
-        public class CreateChoiceParam {
+        public static class CreateChoiceParam {
             private String content;
 
             private boolean correctFlg;
@@ -71,12 +73,12 @@ public class CreateQuizRequest {
             return category;
         }
 
-        public CreateQuestionParam[] getQuestionParams() {
-            return questionParams;
+        public List<CreateQuestionParam> getQuestions() {
+            return questions;
         }
 
-        public void setQuestionParams(CreateQuestionParam[] questionParams) {
-            this.questionParams = questionParams;
+        public void setQuestions(List<CreateQuestionParam> questions) {
+            this.questions = questions;
         }
 
         public String getDescription() {

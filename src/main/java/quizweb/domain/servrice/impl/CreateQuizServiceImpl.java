@@ -1,6 +1,6 @@
 package quizweb.domain.servrice.impl;
 
-import java.util.Calendar;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -34,49 +34,43 @@ public class CreateQuizServiceImpl implements CreateQuizService {
     @Override
     public void createQuiz(CreateQuizParam createQuizParam) {
         TwitterUser loginUser = (TwitterUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        //TODO: too big
-        long quizId = Long.valueOf(
-                String.valueOf(Calendar.getInstance().getTimeInMillis()) + String.valueOf(loginUser.getUserId()));
 
         Quiz quiz = new Quiz();
-        quiz.setId(quizId);
         quiz.setCreateUserid(loginUser.getUserId());
         quiz.setCategory(createQuizParam.getCategory());
         quiz.setTitle(createQuizParam.getTitle());
         quiz.setDescription(createQuizParam.getDescription());
         quizMapper.insert(quiz);
-        //quizが持つquestionをinsert
-        insertQuestions(quizId, createQuizParam.getQuestionParams());
-        
+        // パラメータが持つquestionをinsert
+        insertQuestions(quiz.getId(), createQuizParam.getQuestions());
+
     }
 
-    private void insertQuestions(long quizId,CreateQuestionParam[] params){
-        for (int i = 0; i < params.length; i++) {
-            CreateQuestionParam questionParam = params[i];
-            
-            long questionId = Long.valueOf(String.valueOf(i)+String.valueOf(quizId));
+    private void insertQuestions(long quizId, List<CreateQuestionParam> params) {
+        System.out.println(params);
+        for (int i = 0; i < params.size(); i++) {
+            CreateQuestionParam questionParam = params.get(i);
             Question question = new Question();
-            question.setId(questionId);
             question.setQuizId(quizId);
             question.setNum(i + 1);
             question.setContent(questionParam.getContent());
             questionMapper.insert(question);
-            insertChoice(quizId, questionParam.getChoiceParams());            
+            insertChoice(question.getId(), questionParam.getChoices());
         }
 
     }
 
-    private void insertChoice(long questionId,CreateChoiceParam[] params){
-        for (int i = 0; i < params.length; i++) {
-            CreateChoiceParam questionParam = params[i];
-            
-            long choiceId = Long.valueOf(String.valueOf(i)+String.valueOf(questionId));
+    private void insertChoice(long questionId, List<CreateChoiceParam> params) {
+        for (int i = 0; i < params.size(); i++) {
+            CreateChoiceParam questionParam = params.get(i);
+
+            long choiceId = Long.valueOf(String.valueOf(i) + String.valueOf(questionId));
             Choice choice = new Choice();
             choice.setId(choiceId);
             choice.setQuestionId(questionId);
             choice.setContent(questionParam.getContent());
             choice.setCorrectFlg(questionParam.getCorrectFlg());
-            
+
             choiceMapper.insert(choice);
 
         }
