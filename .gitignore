@@ -28,5 +28,5 @@ hs_err_pid*
 /target
 /.idea
 /.vscode
-/src/resources/static/react
-/src/resources/properties
+/src/main/resources/static/react
+/src/main/resources/properties
