@@ -27,10 +27,9 @@ public class GetQuizServiceImpl implements GetQuizService {
     @Override
     public List<Quiz> getQuizList(GetQuizRequest request) {
         List<Quiz> quizList = null;
-        Category category = Category.valueOf(request.getSearchCondition().getCategory());
         String title = request.getSearchCondition().getTitle();
         Order order = Order.valueOf(request.getSearchCondition().getOrder());
-        SearchCondition searchCondition = new SearchCondition(category, title, order);
+        SearchCondition searchCondition = new SearchCondition( title, order);
         if (request.getLastQuiz() == null) {
             quizList = quizMapper.fetchFirstPage(searchCondition, fetchSize);
         } else {

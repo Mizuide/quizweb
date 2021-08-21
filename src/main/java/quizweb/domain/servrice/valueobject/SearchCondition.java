@@ -4,19 +4,13 @@ import quizweb.domain.servrice.constenum.Category;
 import quizweb.domain.servrice.constenum.Order;
 
 public class SearchCondition {
-    public SearchCondition(Category category, String title, Order order) {
-        this.category = category;
+    public SearchCondition( String title, Order order) {
         this.title = title;
         this.order = order;
     }
-
-    private Category category;
-    private String title;
+ private String title;
     private Order order;
 
-    public Category getCategory() {
-        return category;
-    }
 
     public String getTitle() {
         return title;
