@@ -1,20 +1,13 @@
 package quizweb.presentation.request;
 
-import quizweb.domain.repository.entity.Quiz;
-
 public class GetQuizRequest {
     public static class SearchCondition {
 
         private String title;
-        private String category;
         private String order;
 
         public String getTitle() {
             return title;
-        }
-
-        public String getCategory() {
-            return category;
         }
 
         public String getOrder() {
@@ -25,10 +18,6 @@ public class GetQuizRequest {
             this.title = title;
         }
 
-        public void setCategory(String category) {
-            this.category = category;
-        }
-
         public void setOrder(String order) {
             this.order = order;
         }
@@ -36,21 +25,32 @@ public class GetQuizRequest {
 
     private SearchCondition searchConditions;
 
-    private Quiz lastQuiz;
+    private int page;
+
+    private int fetchSize;
 
     public SearchCondition getSearchCondition() {
         return searchConditions;
     }
 
-    public Quiz getLastQuiz() {
-        return lastQuiz;
-    }
-
-    public void setLastQuiz(Quiz lastQuiz) {
-        this.lastQuiz = lastQuiz;
-    }
-
     public void setSearchConditions(SearchCondition searchConditions) {
         this.searchConditions = searchConditions;
     }
+
+    public int getPage() {
+        return page;
+    }
+
+    public void setPage(int page) {
+        this.page = page;
+    }
+
+    public int getFetchSize() {
+        return fetchSize;
+    }
+
+    public void setFetchSize(int fetchSize) {
+        this.fetchSize = fetchSize;
+    }
+
 }

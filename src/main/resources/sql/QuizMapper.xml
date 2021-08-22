@@ -37,52 +37,34 @@
     from quiz
     where id = #{id,jdbcType=BIGINT}
   </select>
-  
-  <select id="fetchFirstPage" resultMap="BaseResultMap">
+
+  <select id="count" resultType="int">
     select
-    <include refid="Base_Column_List" />
+      count(*)
     from quiz
-    <where>
-      <if test="searchCondition.category.toString() !=  'all'">    
-        category=#{searchCondition.category,jdbcType=VARCHAR}
-      </if>
+  <where>
       <if test="searchCondition.title != null">    
         AND title LIKE CONCAT('%', #{searchCondition.title,jdbcType=VARCHAR}, '%')
       </if>
     </where> 
-    order by
-      <!-- id DESC -->
-      ${searchCondition.order.value}
-    limit
-      #{fetchSize}
   </select>
   
-  <select id="fetchPage" resultMap="BaseResultMap">
+  <select id="fetchQuizes" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
     from quiz
     <where>
-      <if test="searchCondition.category.toString() !=  'all'">    
-        category=#{searchCondition.category,jdbcType=VARCHAR}
-      </if>
       <if test="searchCondition.title != null">    
         AND title LIKE CONCAT('%', #{searchCondition.title,jdbcType=VARCHAR}, '%')
-      </if>
-      <if test="searchCondition.order.toString() == 'newOrder'">
-        AND  id &lt; #{lastQuiz.id}
-      </if>
-      <if test="searchCondition.order.toString() == 'oldOrder'">
-        AND  id &gt; #{lastQuiz.id}
-      </if>
-      <if test="searchCondition.order.toString() == 'viewOrder'">
-        AND answererNum &gt; #{lastQuiz.answererNum}
       </if>
     </where> 
     order by
       <!-- id DESC -->
       ${searchCondition.order.value}
     limit
-      #{fetchSize}
+      #{limit}
+    offset
+      #{offset}
   </select>
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">

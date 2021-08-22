@@ -1,13 +1,10 @@
 package quizweb.domain.servrice;
 
-import java.util.List;
-
-import quizweb.domain.repository.entity.Quiz;
+import quizweb.domain.servrice.valueobject.QuizesInfo;
 import quizweb.presentation.request.GetQuizRequest;
 
 public interface GetQuizService {
 
-
-    public List<Quiz> getQuizList(GetQuizRequest request);
+    public QuizesInfo getQuizList(GetQuizRequest request);
 
 }
