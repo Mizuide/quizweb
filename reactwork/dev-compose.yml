@@ -11,7 +11,7 @@
   networks:
     default:
         external:
-          name: quizweb_app_net
+          name: quizweb_develop_net
   volumes:
     react_zone:
         external:
