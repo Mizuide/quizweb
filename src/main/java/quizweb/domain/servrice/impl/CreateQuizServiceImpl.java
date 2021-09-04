@@ -34,7 +34,6 @@ public class CreateQuizServiceImpl implements CreateQuizService {
     @Override
     public void createQuiz(CreateQuizParam createQuizParam) {
         TwitterUser loginUser = (TwitterUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-
         Quiz quiz = new Quiz();
         quiz.setCreateUserid(loginUser.getUserId());
         quiz.setCategory(createQuizParam.getCategory());

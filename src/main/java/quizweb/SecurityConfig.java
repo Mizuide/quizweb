@@ -43,19 +43,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) throws Exception {
         // Security Filter Chain から除外するパス等を設定
-        web.ignoring().antMatchers("/img/**/","/index","/doAuth","/**/manifest.json");
+        web.ignoring().antMatchers("/img/**/","/","/doAuth","/**/manifest.json");
     }
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()).and()
             .authorizeRequests()
-                // .antMatchers("/").permitAll()
-                .anyRequest().authenticated()
+                .antMatchers("/").authenticated()
+                .anyRequest().permitAll()
             .and()
                 .logout().logoutUrl("/logout")
             .and()
                 .addFilter(preAuthenticatedProcessingFilter())
                 .exceptionHandling()
-                .authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/index"));
+                .authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/"));
     }
 }
