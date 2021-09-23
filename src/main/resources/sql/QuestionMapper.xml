@@ -65,9 +65,9 @@
       This element was generated on Sun May 16 03:04:49 UTC 2021.
     -->
     insert into question (id, quiz_id, num, 
-      name, content)
+      name, content, choiceType)
     values (#{id,jdbcType=BIGINT}, #{quizId,jdbcType=BIGINT}, #{num,jdbcType=INTEGER}, 
-      #{name,jdbcType=VARCHAR}, #{content,jdbcType=LONGVARCHAR})
+      #{name,jdbcType=VARCHAR}, #{content,jdbcType=LONGVARCHAR},#{choiceType,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="quizweb.domain.repository.entity.Question">
     <!--

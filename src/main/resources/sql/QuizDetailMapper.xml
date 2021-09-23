@@ -17,6 +17,7 @@
             <result column="question_num" jdbcType="INTEGER" property="num" />
             <result column="question_name" jdbcType="VARCHAR" property="name" />
             <result column="question_content" jdbcType="LONGVARCHAR" property="content" />
+            <result column="question_choiceType" jdbcType="LONGVARCHAR" property="choiceType" />
             <collection property="choices" ofType="quizweb.domain.repository.entity.Choice">
                 <id column="choice_id" jdbcType="BIGINT" property="id" />
                 <result column="choice_question_id" jdbcType="BIGINT" property="questionId" />
@@ -46,7 +47,8 @@
         question.quiz_id as question_quiz_id,
         question.num as question_num,
         question.name as question_name,
-        question.content as question_content
+        question.content as question_content,
+        question.choiceType as question_choiceType
     </sql>
     <sql id="choice_Column_List">
         choice.id as choice_id,

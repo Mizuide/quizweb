@@ -60,6 +60,7 @@ public class CreateQuizServiceImpl implements CreateQuizService {
             question.setQuizId(quizId);
             question.setNum(i + 1);
             question.setContent(questionParam.getContent());
+            question.setChoiceType(questionParam.getChoiceType().toString());
             questionMapper.insert(question);
             insertChoice(questionParam.getChoiceType(), question.getId(), questionParam.getChoices());
         }
