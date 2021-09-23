@@ -3,5 +3,6 @@ quiz_id BIGINT,
 num int,
 name varchar(1000),
 content text,
-comment text
+comment text,
+choiceType text
 ) AUTO_INCREMENT = 20;
