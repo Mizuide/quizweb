@@ -7,7 +7,8 @@
       - .:/workspaces/quizweb
       - react_zone:/workspaces/quizweb/src/main/resources/static/react
       networks:
-      - develop_net  
+        develop_net:
+          ipv4_address: 172.22.0.10
       command: /bin/sh -c "while sleep 1000; do :; done"
     mysql:
       image: mysql:8.0.20
@@ -20,7 +21,7 @@
         MYSQL_PASSWORD: user
         command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
       volumes: 
-        - ./sql/firstSql/:/docker-entrypoint-initdb.d/
+        - ./sql/firstSql:/docker-entrypoint-initdb.d
         - ./conf/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
         # - db_data:/var/lib/mysql
       networks:
@@ -51,6 +52,7 @@
       volumes:
         - ./conf/tomcat/conf:/usr/local/tomcat/conf
         - ./target/QuizWeb-1.0-SNAPSHOT.war:/usr/local/tomcat/webapps/quizWeb.war
+        # - images:/usr/local/tomcat/webapps/quizWeb/WEB-INF/classes/static/img
       networks:
         develop_net:
           ipv4_address: 172.22.0.5
@@ -62,5 +64,7 @@
         driver: default
         config:
           - subnet: 172.22.0.1/24
+
   volumes:
     react_zone:
+    images:    

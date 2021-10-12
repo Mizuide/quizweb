@@ -3,9 +3,8 @@
   services:
     develop:
       image: node:15.12.0
-      shm_size: 2gb
       volumes:
-      - .:/workspace/
+      - .:/workspace
       - react_zone:/workspace/build
       command: /bin/sh -c "while sleep 1000; do :; done"     
   networks:
