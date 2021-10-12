@@ -10,6 +10,8 @@ public class CreateQuizRequest {
     public static class CreateQuizParam {
         private String category;
 
+        private String thumbnail;
+
         private String title;
 
         private String description;
@@ -85,6 +87,10 @@ public class CreateQuizRequest {
             return category;
         }
 
+        public void setCategory(String category) {
+            this.category = category;
+        }
+
         public List<CreateQuestionParam> getQuestions() {
             return questions;
         }
@@ -109,10 +115,13 @@ public class CreateQuizRequest {
             this.title = title;
         }
 
-        public void setCategory(String category) {
-            this.category = category;
+        public String getThumbnail(){
+            return thumbnail;
         }
 
+        public void setThumbnail(String thumbnail){
+            this.thumbnail = thumbnail;
+        }
     }
 
     public CreateQuizParam getCreateQuizParam() {

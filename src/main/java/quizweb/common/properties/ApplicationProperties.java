@@ -19,7 +19,7 @@ public class ApplicationProperties {
         return callbackUrl;
     }
     
-    public String getImageTumbnailPath(){
+    public String getImageThumbnailPath(){
         return imageThumbnailPath;
     }
 

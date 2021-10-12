@@ -44,7 +44,7 @@ public class Quiz {
      *
      * @mbg.generated Sun May 16 03:01:42 UTC 2021
      */
-    private String thubnail;
+    private String thumbnail;
 
     /**
      *
@@ -186,8 +186,8 @@ public class Quiz {
      *
      * @mbg.generated Sun May 16 03:01:42 UTC 2021
      */
-    public String getThubnail() {
-        return thubnail;
+    public String getThumbnail() {
+        return thumbnail;
     }
 
     /**
@@ -198,8 +198,8 @@ public class Quiz {
      *
      * @mbg.generated Sun May 16 03:01:42 UTC 2021
      */
-    public void setThubnail(String thubnail) {
-        this.thubnail = thubnail;
+    public void setThumbnail(String thumbnail) {
+        this.thumbnail = thumbnail;
     }
 
     /**

@@ -44,6 +44,10 @@ public class CreateQuizServiceImpl implements CreateQuizService {
         Quiz quiz = new Quiz();
         quiz.setCreateUserid(loginUser.getUserId());
         quiz.setCategory(createQuizParam.getCategory());
+
+        String fileName = FileUtil.saveImageByBase64(applicationProperties.getImageThumbnailPath(), createQuizParam.getThumbnail());
+        quiz.setThumbnail(fileName);
+        
         quiz.setTitle(createQuizParam.getTitle());
         quiz.setDescription(createQuizParam.getDescription());
         quizMapper.insert(quiz);
@@ -106,6 +110,7 @@ public class CreateQuizServiceImpl implements CreateQuizService {
 
             String fileName = FileUtil.saveImageByBase64(applicationProperties.getImageChoicePath(), questionParam.getContent());
             choice.setContent(fileName);
+
             choice.setCorrectFlg(questionParam.getCorrectFlg());
 
             choiceMapper.insert(choice);

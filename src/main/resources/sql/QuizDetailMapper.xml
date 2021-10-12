@@ -6,7 +6,7 @@
         <result column="quiz_create_userid" jdbcType="BIGINT" property="createUserid" />
         <result column="quiz_title" jdbcType="VARCHAR" property="title" />
         <result column="quiz_description" jdbcType="VARCHAR" property="description" />
-        <result column="quiz_thubnail" jdbcType="VARCHAR" property="thubnail" />
+        <result column="quiz_thumbnail" jdbcType="VARCHAR" property="thumbnail" />
         <result column="quiz_answerer_num" jdbcType="INTEGER" property="answererNum" />
         <result column="quiz_avarage_correct" jdbcType="REAL" property="avarageCorrect" />
         <result column="quiz_category" jdbcType="VARCHAR" property="category" />
@@ -35,7 +35,7 @@
         quiz.create_userid as quiz_create_userid, 
         quiz.title as quiz_title,
         quiz.description as quiz_description,
-        quiz.thubnail as quiz_thubnail,
+        quiz.thumbnail as quiz_thumbnail,
         quiz.answerer_num as quiz_answerer_num,
         quiz.avarage_correct as quiz_avarage_correct,
         quiz.category as quiz_category, 

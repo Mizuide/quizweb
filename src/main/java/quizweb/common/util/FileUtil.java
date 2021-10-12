@@ -19,7 +19,6 @@ public class FileUtil {
         String extension = mt.group(1);
         String fileName = String.valueOf(System.currentTimeMillis()) + "." + extension;
         String absolutePath = ResourceUtils.getFile(dirPath).getAbsolutePath();
-        System.out.println(absolutePath + "/" + fileName);
         try (FileOutputStream fos = new FileOutputStream(absolutePath + "/" + fileName)) {
             byte[] data = Base64.getDecoder().decode(base64DataURL.replaceFirst(extensionReg, "").getBytes());
             fos.write(data);
