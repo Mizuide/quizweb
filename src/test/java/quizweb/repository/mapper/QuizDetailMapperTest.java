@@ -10,11 +10,11 @@ import quizweb.domain.repository.mapper.QuizDetailMapper;
 @SpringBootTest
 public class QuizDetailMapperTest {
   @Autowired
-    QuizDetailMapper quizDetailMapper;
+  QuizDetailMapper quizDetailMapper;
 
-    @Test
-    public void test(){
-       QuizDetail qd = quizDetailMapper.getQuizDetail(1l);
-        System.out.println(qd.getQuestions().get(0).getContent());
-    }
+  @Test
+  public void test() {
+    QuizDetail qd = quizDetailMapper.getQuizDetail(1l);
+    System.out.println(qd.getQuestions().get(0).getContent());
+  }
 }

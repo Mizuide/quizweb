@@ -12,7 +12,7 @@ public class AuthOnTwitterServiceTest {
     AuthOnTwitterServiceImpl target;
 
     @Test
-    public void test(){
+    public void test() {
         System.out.println(target.callbackURL);
     }
 
