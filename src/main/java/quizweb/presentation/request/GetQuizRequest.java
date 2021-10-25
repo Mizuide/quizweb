@@ -1,27 +1,8 @@
 package quizweb.presentation.request;
 
+import quizweb.domain.servrice.valueobject.SearchCondition;
+
 public class GetQuizRequest {
-    public static class SearchCondition {
-
-        private String title;
-        private String order;
-
-        public String getTitle() {
-            return title;
-        }
-
-        public String getOrder() {
-            return order;
-        }
-
-        public void setTitle(String title) {
-            this.title = title;
-        }
-
-        public void setOrder(String order) {
-            this.order = order;
-        }
-    }
 
     private SearchCondition searchConditions;
 

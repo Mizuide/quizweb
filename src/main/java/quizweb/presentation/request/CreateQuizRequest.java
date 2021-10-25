@@ -3,6 +3,7 @@ package quizweb.presentation.request;
 import java.util.List;
 
 import quizweb.common.enums.ChoiceTypeEnum;
+import quizweb.domain.repository.entity.Tag;
 
 public class CreateQuizRequest {
     private CreateQuizParam createQuizParam;
@@ -15,6 +16,8 @@ public class CreateQuizRequest {
         private String title;
 
         private String description;
+
+        private List<Tag> tags;
 
         private List<CreateQuestionParam> questions;
 
@@ -85,6 +88,14 @@ public class CreateQuizRequest {
 
         public String getCategory() {
             return category;
+        }
+
+        public List<Tag> getTags() {
+            return tags;
+        }
+
+        public void setTags(List<Tag> tags) {
+            this.tags = tags;
         }
 
         public void setCategory(String category) {

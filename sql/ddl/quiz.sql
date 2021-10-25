@@ -5,6 +5,5 @@ description varchar(300),
 thumbnail varchar(300),
 answerer_num int,
 avarage_correct float,
-category varchar(1000),
-tag varchar(100)
+category varchar(1000)
 ) AUTO_INCREMENT = 20;

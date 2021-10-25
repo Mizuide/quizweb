@@ -9,8 +9,6 @@
         <result column="quiz_thumbnail" jdbcType="VARCHAR" property="thumbnail" />
         <result column="quiz_answerer_num" jdbcType="INTEGER" property="answererNum" />
         <result column="quiz_avarage_correct" jdbcType="REAL" property="avarageCorrect" />
-        <result column="quiz_category" jdbcType="VARCHAR" property="category" />
-        <result column="quiz_tag" jdbcType="VARCHAR" property="tag" />
         <collection property="questions" ofType="quizweb.domain.repository.entity.QuestionDetail">
             <id column="question_id" jdbcType="BIGINT" property="id" />
             <result column="question_quiz_id" jdbcType="BIGINT" property="quizId" />
@@ -28,8 +26,6 @@
         </collection>
     </resultMap>
 
-
-
     <sql id="quiz_Column_List">
         quiz.id as quiz_id, 
         quiz.create_userid as quiz_create_userid, 
@@ -38,8 +34,6 @@
         quiz.thumbnail as quiz_thumbnail,
         quiz.answerer_num as quiz_answerer_num,
         quiz.avarage_correct as quiz_avarage_correct,
-        quiz.category as quiz_category, 
-        quiz.tag quiz_category
     </sql>
 
     <sql id="question_Column_List">

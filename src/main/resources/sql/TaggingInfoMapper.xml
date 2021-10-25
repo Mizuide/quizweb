@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="quizweb.domain.repository.mapper.TaggingInfoMapper">
+  <resultMap id="BaseResultMap" type="quizweb.domain.repository.entity.TaggingInfo">
+    <result column="quiz_id" jdbcType="BIGINT" property="quizId" />
+    <result column="tag_id" jdbcType="BIGINT" property="tagId" />
+    <result column="tag" jdbcType="VARCHAR" property="tag" />
+    <result column="num" jdbcType="BIGINT" property="num" />
+  </resultMap>
+      <select id="getTaggingInfoByQuizId" resultMap="BaseResultMap"  parameterType="quizweb.domain.repository.entity.Quiz">
+        select
+         quiz_tagging.quiz_id, 
+         quiz_tagging.tag_id, 
+         tag.tag,
+         tag.num 
+        from
+          quiz_tagging
+        inner join tag
+          on quiz_tagging.tag_id=tag.id 
+        where
+          quiz_tagging.quiz_Id in
+          <foreach item="item" collection="list"  open="(" separator="," close=")">
+           #{item.id,jdbcType=BIGINT} 
+          </foreach>
+      </select>
+</mapper>

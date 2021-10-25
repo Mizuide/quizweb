@@ -12,6 +12,13 @@
      {"id":10,"create_userid":1,"title":"ダミー","answerer_num":0,"avarage_correct":0.0,"category":"anime"},
      {"id":11,"create_userid":1,"title":"ダミー","answerer_num":0,"avarage_correct":0.0,"category":"other"}
     ],
+"tag":[
+    {"id":1,"tag":"進撃の巨人","num":2}
+],
+"quiz_tagging":[
+    {"quiz_id":1,"tag_id":1},
+    {"quiz_id":2,"tag_id":1}
+],
  "question":[
      {"id":1,"quiz_id":1,"num":1,"content":"エレンが巨人になった時の身長は何m？","comment":"16m"},
      {"id":2,"quiz_id":1,"num":2,"content":"ミカサの巻いているマフラーの色は？"},
